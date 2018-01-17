@@ -41,16 +41,20 @@ $(function(){
 }
 
   function changeColor(event){
-    let selectedColor = $("#color").val();
-    if($(this).css("background-color") == "rgb(255, 255, 255)"){
-      $(this).css("background-color", selectedColor);
-    }
-    else{
-      $(this).css("background-color", "rgb(255, 255, 255)")
+    event.preventDefault();
+    if(event.buttons === 1){
+      let selectedColor = $("#color").val(),
+          erase = $("#erase").is(":checked");
+      if(erase){
+        $(this).css("background-color", "rgb(255, 255, 255)")
+      }
+      else{
+        $(this).css("background-color", selectedColor);
+      }
     }
   }
-
-  $(".grid").on("click", "td", changeColor);
+  $(".grid").on("mousedown", "td", changeColor);
+  $(".grid").on("mouseover", "td", changeColor);
   $("#createGrid").on("click", checkGrid);
   setDefaults();
   $("#createGrid").trigger("click");
