@@ -1,3 +1,0 @@
-function createGrid() {
-  alert("GRID");
-}
