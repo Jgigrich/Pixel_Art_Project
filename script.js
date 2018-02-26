@@ -1,7 +1,7 @@
 $(function(){
   function setDefaults(){
-    if($(window).width() < 500){
-      $("#columns").attr("value", "10");
+    if($(window).width() > 500){
+      $("#columns").attr("value", "16");
     }
   }
 
