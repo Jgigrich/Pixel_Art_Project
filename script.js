@@ -38,24 +38,31 @@ $(function(){
       tableRow.appendTo(grid);
     }
     grid.appendTo(".container");
-}
+  }
 
   function changeColor(event){
     event.preventDefault();
-    if(event.buttons === 1){
+    if(event.type==="touchstart" || event.type==="touchmove" || event.buttons === 1){
       let selectedColor = $("#color").val(),
           erase = $("#erase").is(":checked");
       if(erase){
         $(this).css("background-color", "rgb(255, 255, 255)")
       }
       else{
+        console.log(event);
         $(this).css("background-color", selectedColor);
       }
     }
   }
+
+  /**********  Event Handlers  **********/
+  $(".grid").on("touchenter", "td", changeColor);
+  $(".grid").on("touchstart", "td", changeColor);
   $(".grid").on("mousedown", "td", changeColor);
   $(".grid").on("mouseover", "td", changeColor);
   $("#createGrid").on("click", checkGrid);
+
+  /********** Startup **********/
   setDefaults();
   $("#createGrid").trigger("click");
 });

@@ -2,15 +2,14 @@
   margin: 0;
   padding: 0;
 }
-.test {
-  border: 1px dashed red;
-}
 body {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
   font-size: 40px;
   color: #333;
   background-color: #f2e6d2;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://upload.wikimedia.org/wikipedia/commons/f/f2/Modern_art_wall_splashed_handyman_dripped_free-form_painting.jpg");
+  background-position: center;
   padding: 10px;
 }
 .container {
@@ -18,6 +17,7 @@ body {
 }
 h1 {
   font-size: calc(0.5em + 5vw);
+  color: #eee;
 }
 .controls {
   display: flex;
